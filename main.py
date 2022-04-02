@@ -3,6 +3,7 @@ import time
 import os
 
 if "token" in os.environ:
+    print("System Started")
     session = vk.Session(access_token=os.environ.get('token'))
     api = vk.API(session, v="5.95")
     while True:
