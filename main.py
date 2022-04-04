@@ -11,12 +11,12 @@ def starter():
                 session = vk.Session(access_token=os.environ.get('token'))
                 api = vk.API(session, v="5.95")
                 while True:
-                    exit = api.account.setOnline(voip=0)
+                    api.account.setOnline(voip=0)
                     time.sleep(180)
             else:
                 raise Exception("Error: Token Missing")
     except Exception:
-        print("Something crashed your program. Let's restart it")
+        print("A critical error has occurred")
         starter()
 
 
